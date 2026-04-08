@@ -1,0 +1,245 @@
+.presentation {
+  width: 100%;
+  max-width: 720px;
+  margin: auto;
+  padding: 2.5rem 1.5rem 4rem;
+}
+
+/* hero */
+
+.hero {
+  margin-bottom: 3.5rem;
+}
+
+.course-tag {
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--accent);
+  margin-bottom: 1rem;
+}
+
+.hero h1 {
+  font-size: 1.3rem;
+  line-height: 1.4;
+  margin-bottom: 1rem;
+}
+
+.citation {
+  border-left: 2px solid var(--card-border);
+  padding: 0.5rem 0.8rem;
+  margin: 0;
+  background: none;
+  border-radius: 0;
+  font-size: 0.78rem;
+  color: var(--font-color-muted);
+  line-height: 1.6;
+  /* apa hanging indent */
+  padding-left: 2.3rem;
+  text-indent: -1.5rem;
+}
+
+.citation em {
+  color: var(--font-color-muted);
+}
+
+.citation a {
+  font-weight: normal;
+  color: var(--font-color-muted);
+  text-decoration: underline;
+}
+
+/* table of contents */
+
+.toc {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem 0.75rem;
+  justify-content: center;
+  padding: 0.75rem 0;
+  margin-bottom: 2rem;
+  border-top: 1px solid var(--card-border);
+  border-bottom: 1px solid var(--card-border);
+  font-size: 0.85rem;
+}
+
+.toc a {
+  padding: 0.2rem 0.5rem;
+  border-radius: 4px;
+  transition: background 0.2s;
+}
+
+.toc a:hover {
+  background: var(--accent-faint);
+  text-decoration: none;
+}
+
+/* sections */
+
+.section {
+  margin-bottom: 2.5rem;
+}
+
+.section h2 {
+  margin-bottom: 0.75rem;
+  padding-bottom: 0.35rem;
+  border-bottom: 1px solid var(--card-border);
+}
+
+.section h3 {
+  font-size: 0.95rem;
+  margin: 1rem 0 0.4rem;
+}
+
+.section p {
+  font-size: 0.9rem;
+  margin-bottom: 0.75rem;
+  line-height: 1.7;
+}
+
+.section ul,
+.section ol {
+  margin: 0.4rem 0 0.75rem 1.25rem;
+  font-size: 0.9rem;
+}
+
+.section li {
+  margin-bottom: 0.5rem;
+  line-height: 1.6;
+}
+
+/* dataset table */
+
+.dataset-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.82rem;
+  margin: 1rem 0 1.5rem;
+  border: 1px solid var(--card-border);
+}
+
+.dataset-table th,
+.dataset-table td {
+  text-align: left;
+  padding: 0.5rem 0.75rem;
+  border: 1px solid var(--card-border);
+}
+
+.dataset-table th {
+  font-weight: 600;
+  color: var(--accent);
+  background: var(--card-bg);
+}
+
+.dataset-table td:first-child {
+  font-weight: 600;
+  color: var(--font-color-secondary);
+  white-space: nowrap;
+}
+
+.dataset-table td {
+  color: var(--font-color);
+}
+
+/* figure images */
+
+.figure {
+  margin: 1.25rem 0;
+}
+
+.figure img {
+  width: 100%;
+  border-radius: 4px;
+  border: 1px solid var(--card-border);
+}
+
+.figure figcaption {
+  font-size: 0.78rem;
+  color: var(--font-color-secondary);
+  margin-top: 0.4rem;
+  line-height: 1.5;
+}
+
+/* results grid */
+
+.results-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.75rem;
+  margin-top: 0.75rem;
+}
+
+.result-card {
+  background: var(--card-bg);
+  border: 1px solid var(--card-border);
+  border-radius: 6px;
+  padding: 0.75rem;
+}
+
+.result-card h3 {
+  margin: 0 0 0.3rem;
+  font-size: 0.9rem;
+  color: var(--accent);
+}
+
+.result-card p {
+  font-size: 0.82rem;
+  margin: 0;
+}
+
+/* critique */
+
+.critique-group {
+  margin-bottom: 1rem;
+}
+
+.critique-group h3 {
+  color: var(--accent);
+}
+
+/* footer */
+
+.presentation-footer {
+  text-align: center;
+  padding: 1.5rem 0 0.5rem;
+  border-top: 1px solid var(--card-border);
+  font-size: 0.8rem;
+  color: var(--font-color-secondary);
+}
+
+/* references */
+
+ol.references {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+ol.references li {
+  padding-left: 2rem;
+  text-indent: -2rem;
+  margin-bottom: 0.6rem;
+  font-size: 0.82rem;
+  line-height: 1.6;
+  color: var(--font-color-secondary);
+}
+
+/* mobile */
+
+@media (max-width: 600px) {
+  .presentation {
+    padding: 1.5rem 1rem 3rem;
+  }
+
+  .hero h1 {
+    font-size: 1.05rem;
+  }
+
+  .results-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .dataset-table {
+    font-size: 0.75rem;
+  }
+}

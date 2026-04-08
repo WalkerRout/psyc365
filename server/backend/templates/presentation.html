@@ -1,0 +1,530 @@
+{% extends "base.html" %}
+
+{% block title %}PSYC365 Presentation{% endblock title %}
+
+{% block extra_css %}
+  <link rel="stylesheet" href="/static/css/presentation.css">
+{% endblock extra_css %}
+
+{% block content %}
+  <div class="presentation">
+    <header class="hero">
+      <h1>The Human Brain Reactivates Context-Specific Past Information at Event Boundaries of Naturalistic Experiences</h1>
+      <blockquote class="citation">
+        Hahamy, A., Dubossarsky, H., &amp; Behrens, T. E. J. (2023). The human brain reactivates context-specific past information at event boundaries of naturalistic experiences. <em>Nature Neuroscience</em>, <em>26</em>(6), 1080-1089.
+        <a href="https://doi.org/10.1038/s41593-023-01331-6" target="_blank" rel="noopener">https://doi.org/10.1038/s41593-023-01331-6</a>
+      </blockquote>
+    </header>
+
+    <section id="rationale" class="section">
+      <h2>Rationale</h2>
+
+      <h3>The Big Picture</h3>
+      <p>
+        We consciously experience the world as a continuous stream, but remember it in chunks (discrete slices with beginnings
+        and endings)... how does the brain wire these chunks together into a coherent understanding of what is actively happening?
+      </p>
+
+      <h3>What We Already Know</h3>
+      <p>
+        Existing research has established:
+      </p>
+      <ul>
+        <li>
+          The brain breaks continuous experience into discrete "events" at moments of change. Similar to a scene transition 
+          in a movie, or a shift in topic during a conversation. These transition points are referred to as <strong>event 
+          boundaries</strong> (Zacks et al., 2007; Radvansky &amp; Zacks, 2011).
+        </li>
+        <li>
+          The <strong>hippocampus</strong> plays a central role in <strong>a)</strong> detecting these boundaries and
+          <strong>b)</strong> encoding each event into memory (Ben-Yakov et al., 2013; Ben-Yakov &amp; Henson, 2018;
+          Zheng et al., 2022).
+        </li>
+        <li>
+          During sleep/rest, the brain can <strong>replay</strong> neural patterns from past experiences to help consolidate
+          memories (Foster, 2017; Findlay et al., 2020). In rodents, this replay has been shown to piece together sequential
+          events, as if the brain is building a mental map of its experiences (Gupta et al., 2010; Pfeiffer &amp; Foster, 2013;
+          Karlsson &amp; Frank, 2009).
+        </li>
+        <li>
+          In humans, similar replay-like activity (what we refer to as <strong>reinstatement</strong> in class, and
+          <strong>reactivation</strong> by the authors) has been observed during offline periods, and to a certain extent,
+          right after an event ends (Sols et al., 2017; Silva et al., 2019; Tambini &amp; Davachi, 2019).
+        </li>
+      </ul>
+
+      <h3>The Knowledge Gap</h3>
+      <p>
+        While we can say we know that the brain replays memories during downtime (Foster, 2017; Findlay et al., 2020), no
+        one had shown that the brain <em>selectively</em> reactivates <em>relevant</em> past experiences <em>in realtime</em> during
+        some ongoing experience. Specifically, it was unknown whether the brain, at the exact moment a scene changes,
+        retrieves not just that specific scene, but also older, contextually related memories that help make sense of what
+        is actively happening.
+      </p>
+      <p>
+        Put in naturalistic terms: does your brain, at every scene change in a movie, automatically pull up earlier scenes
+        that are relevant to understanding the current plot? Furthermore, does it do achieve this using the hippocampus
+        and default mode network, the same regions involved in memory and narrative comprehension (Yeshurun et al., 2021)?
+      </p>
+    </section>
+
+    <section id="hypotheses" class="section">
+      <h2>Motivation and Questions</h2>
+
+      <p>
+        We know the brain replays memories offline and segments experience at event boundaries, but nobody had connected
+        these two ideas during live, ongoing experience...
+      </p>
+
+      <h3>Research Question</h3>
+      <p>
+        When the brain encounters an event boundary during a naturalistic experience, does it reactivate neural representations
+        of <em>distant, yet contextually relevant</em>, past events alongside the event that just ended?
+      </p>
+
+      <h3>Hypotheses</h3>
+      <p>
+        The authors approached this question by breaking it down into three testable predictions:
+      </p>
+      <ol>
+        <li>
+          <strong>Reactivation of remote past events occurs at event boundaries:</strong> At event boundaries, brain activity
+          patterns will resemble patterns from earlier scenes more than patterns from upcoming scenes. This is indicative that
+          the brain is replaying past information, not just propagating the active signal.
+        </li>
+        <li>
+          <strong>Reactivation is specific to event boundaries:</strong> The effect should be stronger at event boundaries than
+          at other, non-boundary timepoints. This helps rule out the possibility that the brain is constantly replaying past events,
+          regardless of what is happening.
+        </li>
+        <li>
+          <strong>Reactivation is selective for relevant past events:</strong> Past events that are semantically related to the
+          current narrative context should be reactivated more strongly than unrelated past events. Again, this suggests that the
+          brain is not replaying everything, but searching for context to aid comprehension of the active situation.
+        </li>
+      </ol>
+
+      <h3>Why These Hypotheses?</h3>
+      <p>
+        Prior work showed offline replay exists (Foster, 2017) and that the just-ended event is briefly reinstated at boundaries
+        (Sols et al., 2017; Silva et al., 2019). The logical next step is to question whether <em>remote</em> events, that is ones
+        that happened minutes ago, not seconds, are selectively brought back online at boundaries based on their relevance to the
+        current moment. This would reframe reactivation from a simple repeat of the recent past into an active mechanism for
+        supporting narrative understanding in realtime.
+      </p>
+    </section>
+
+    <section id="methods" class="section">
+      <h2>Research Design and Procedure</h2>
+
+      <h3>Design Overview</h3>
+      <p>
+        This is a <strong>within-subjects, correlational neuroimaging study</strong> using multimodal, naturalistic stimuli. There
+        is no experimental manipulation in the traditional sense; participants simply watched a movie or listened to a story while
+        being scanned. The "manipulation" is hidden in/provided by the stimulus itself, the narrative naturally contains event
+        boundaries and scenes of varying semantic relatedness, which the authors exploit analytically.
+      </p>
+
+      <h3>Participants and Task</h3>
+      <p>
+        The study analyzed two existing fMRI datasets. In both, healthy adult participants passively experienced a continuous
+        narrative while undergoing a whole-brain BOLD fMRI scan:
+      </p>
+
+      <table class="dataset-table">
+        <thead>
+          <tr>
+            <th></th>
+            <th>Sherlock</th>
+            <th>21st Year</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Participant Count</td>
+            <td>17</td>
+            <td>25</td>
+          </tr>
+          <tr>
+            <td>Stimulus</td>
+            <td>Audiovisual movie (BBC's <em>Sherlock</em>)</td>
+            <td>Auditory story</td>
+          </tr>
+          <tr>
+            <td>Genre</td>
+            <td>Mystery</td>
+            <td>Drama</td>
+          </tr>
+          <tr>
+            <td>Structure</td>
+            <td>Single continuous narrative</td>
+            <td>Two alternating narratives that merge at the end</td>
+          </tr>
+          <tr>
+            <td>Length</td>
+            <td>48min</td>
+            <td>56min</td>
+          </tr>
+          <tr>
+            <td>Scenes</td>
+            <td>48</td>
+            <td>45</td>
+          </tr>
+          <tr>
+            <td>Median scene length</td>
+            <td>51s (range: 12s - 184.5s)</td>
+            <td>67.5s (range: 60s - 84s)</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <h3>Why These Participants and Stimuli?</h3>
+      <p>
+        The authors deliberately chose naturalistic stimuli (a movie and a story) over traditional lab tasks because naturalistic
+        narratives contain unique, non-repeating events. Unlike typical replay experiments that repeat the same trials over and over,
+        naturalistic stimuli makes it possible to test whether the brain reactivates <em>specific</em> past events based on their
+        relevance, rather than just replaying an overtrained sequence. Using two different datasets (one visual, one auditory) also
+        allows the authors to examine whether the effect generalizes across modalities.
+      </p>
+
+      <h3>How the Design Addresses the Research Questions</h3>
+      <p>
+        The key analytic tool is <strong>representational similarity analysis (RSA)</strong> (Kriegeskorte et al., 2008). The
+        researchers extracted the BOLD activation pattern (the spatial pattern of activity across voxels) at every event boundary
+        and during every scene. They then asked, "does the pattern at a given boundary look more like the patterns from either
+        <em>past</em> scenes or <em>future</em> scenes"?
+      </p>
+
+      <figure class="figure">
+        <img src="/static/images/analysis-pipeline.png"
+          alt="analysis pipeline; event boundaries identified, BOLD patterns extracted, similarity matrix computed, reactivation index
+          derived from past/future correlation differences">
+        <figcaption>
+          <strong>Figure 1.</strong> Analysis pipeline. Event boundaries are identified in the narrative, BOLD patterns are extracted
+          at each boundary and scene, a similarity matrix is constructed, and the reactivation index is computed as the difference
+          between past and future correlations (cancelling out any symmetric scene similarity).
+        </figcaption>
+      </figure>
+
+      <h3>Independent Variables</h3>
+      <ul>
+        <li>
+          <strong>Timepoint type (boundary vs non-boundary):</strong> Whether a given fMRI timepoint falls at an event boundary or
+          at a control timepoint adjacent to the boundary. This was determined by scene transition timings defined by independent
+          raters, shifted by 6 seconds (4 TRs) to account for BOLD response' hemodynamic delay (the ~5-6 second lag between neural
+          activity and blood flow change, as mentioned in class). In the authors' words: "We defined event boundaries as TRs in
+          which scenes transitioned (TR = 1.5s)."
+        </li>
+        <li>
+          <strong>Semantic relatedness of past scenes:</strong> Measured using bag-of-words, each scene is represented by effectively
+          counting the words that occur in it. Similarity between scenes is then simply computed by the overlap in their word content.
+          This is not manipulated, but varies naturally across the narrative.
+        </li>
+      </ul>
+
+      <h3>Dependent Variables</h3>
+      <ul>
+        <li>
+          <strong>Reactivation index:</strong> The key measure, a difference between the average similarity of boundary patterns
+          to <em>past</em> scene patterns versus <em>future</em> scene patterns. A positive value means the brain at a boundary
+          looks more like <em>where it has been</em> (the past) than <em>where it is going</em> (the future), which is taken to be
+          evidence of reactivation. Again, this is measured from the BOLD signal using RSA on multivoxel activation patterns (as
+          discussed numerous times in class).
+        </li>
+      </ul>
+    </section>
+
+    <section id="results" class="section">
+      <h2>Results and Findings</h2>
+
+      <h3>Remote Past Events are Reactivated at Boundaries</h3>
+      <p>
+        At event boundaries, brain activity patterns in the <strong>posterior hippocampus</strong>, <strong>precuneus/retrosplenial
+        cortex</strong>, and <strong>angular gyrus/lateral occipital cortex</strong> were significantly more similar to patterns
+        from <em>past</em> scenes than <em>future</em> scenes (positive reactivation index). This was true in both datasets individually
+        <em>and</em> in a pooled mega-analysis.
+      </p>
+      <p>
+        This is direct support for the authors' first hypothesis. The brain is not just passively transitioning between scenes; it
+        is actively replaying representations of events that happened minutes earlier, in regions known for episodic memory
+        (hippocampus) and narrative comprehension (default mode network; Chang et al., 2021; Yeshurun et al., 2021).
+      </p>
+
+      <figure class="figure">
+        <img src="/static/images/within-participant-event-boundaries.png"
+          alt="within-participant reactivation maps showing posterior hippocampus, precuneus, and angular gyrus">
+        <figcaption>
+          <strong>Figure 2.</strong> Within-participant reactivation of remote past events at event boundaries. Positive t-values (warm
+          colours) indicate brain regions where activity at boundaries resembles past scenes more than future scenes. Results shown for
+          each dataset and a pooled mega-analysis.
+        </figcaption>
+      </figure>
+
+      <h3>Reactivation is Specific to Event Boundaries</h3>
+      <p>
+        When the reactivation index at event boundaries was compared against control timepoints (moments adjacent to
+        boundaries), the same three regions showed significantly stronger reactivation at boundaries specifically. Reactivation
+        timecourses peaked 6–9 seconds after boundaries, consistent with the BOLD hemodynamic response timing.
+      </p>
+      <p>
+        Cross-validation across datasets confirmed the effect: regions defined from one dataset showed significant reactivation in
+        the other (meta-analysis via Fisher's test: <em>P</em> values are not mentioned on this page, they are available in the original
+        paper for those interested).
+      </p>
+      <p>
+        This directly supports the second hypothesis. The brain is not constantly replaying the past; it specifically does so at
+        targeted moments when the narrative context shifts.
+      </p>
+
+      <figure class="figure">
+        <img src="/static/images/reactivation-specificity.png"
+          alt="reactivation timecourses peaking 6-9 seconds after event boundaries">
+        <figcaption>
+          <strong>Figure 4.</strong> Reactivation is specific to event boundaries. Timecourses show the reactivation index peaking
+          shortly after boundaries (red lines), with cross-validated ROI analyses confirming replication across datasets.
+        </figcaption>
+      </figure>
+
+      <h3>Reactivation Preferentially Targets Relevant Past Events</h3>
+      <p>
+        Using the bag-of-words algorithm to measure semantic similarity between scenes, the authors found that past scenes sharing
+        more words with the current context were more strongly reactivated. This selection of context was most robust in the
+        <strong>precuneus/retrosplenial cortex</strong>, where it replicated across both datasets and analysis methods.
+      </p>
+      <p>
+        Similar to the other findings, this supports the third hypothesis, and it is (probably) the most important finding. The brain 
+        is not replaying all past events equally. It is selectively retrieving the ones that are most relevant to understanding the
+        active moment, as if polling its own history for useful context.
+      </p>
+
+      <figure class="figure">
+        <img src="/static/images/relevant-preference.png"
+          alt="context-selective reactivation in precuneus/retrosplenial cortex">
+        <figcaption>
+          <strong>Figure 5.</strong> Relevant past events are preferentially reactivated. The precuneus/retrosplenial cortex shows
+          stronger reactivation for semantically related past scenes. The effect replicated across datasets and analysis methods.
+        </figcaption>
+      </figure>
+
+      <h3>Reactivation is Shared Across People</h3>
+      <p>
+        Between-participant analyses (correlating one person's scene patterns with another person's boundary patterns) revealed the
+        same three regions, demonstrating that reactivated representations are not just voxel-specific quirks of one individual brain;
+        they have shared structure between individuals (Chen et al., 2017; Zadbood et al., 2017).
+      </p>
+
+      <figure class="figure">
+        <img src="/static/images/between-participant-event-boundaries.png"
+          alt="between-participant reactivation maps">
+        <figcaption>
+          <strong>Figure 3.</strong> Between-participant reactivation confirms that the effect generalizes across individuals, with
+          consistent outputs from the precuneus, hippocampus, and angular gyrus.
+        </figcaption>
+      </figure>
+    </section>
+
+    <section id="discussion" class="section">
+      <h2>Discussion</h2>
+
+      <h3>Interpretation of Findings</h3>
+      <p>
+        The authors propose that <strong>event boundaries serve as natural triggers for memory reactivation</strong>. At these
+        moments, the hippocampus and default mode network work together to retrieve past event representations that are relevant to
+        the current situation, binding them with the ongoing experience. The process is an active, selective retrieval of specific
+        past events based on their contextual relevance and not passive carry-over of recent activity.
+      </p>
+      <p>
+        They frame this as a <strong>constructive mechanism</strong>, in that the brain builds its understanding of an unfolding
+        narrative by continuously embedding relevant pieces of past experience into the present. The precuneus/retrosplenial cortex
+        appears to select <em>which</em> past events to reactivate (based on semantic context), while the hippocampus may bind
+        those reactivated events with the current event model to form some sort of interconnected representation (Eichenbaum, 2000;
+        Shohamy &amp; Wagner, 2008).
+      </p>
+
+      <h3>Implications for the Field</h3>
+      <ul>
+        <li>
+          <strong>Reactivation goes beyond memory consolidation.</strong> Previous work framed replay/reactivation primarily as a
+          mechanism for strengthening memories during sleep or rest (Foster, 2017; Tambini &amp; Davachi, 2019). This study shows
+          reactivation also operates <em>online</em>, during active experience, suggesting it plays a broader role than just
+          consolidation. It is a tool to help us understand the present, not just remember the past.
+        </li>
+        <li>
+          <strong>The default mode network has an online function.</strong> The DMN, which we discussed in class as typically being
+          suppressed during attention-demanding tasks, is traditionally viewed as an "offline" network, active during rest and
+          mindwandering (Buckner et al., 2008). These findings contest that idea, and support the growing body of work suggesting that
+          the DMN seems to play an active role during naturalistic experience (Chang et al., 2021; Yeshurun et al., 2021).
+        </li>
+        <li>
+          Most prior replay studies used highly controlled tasks with repeated trials, meaning replay reflected an overtrained schema
+          rather than specific event memories (Pfeiffer, 2020). By using naturalistic stimuli where every event is unique, this study
+          shows the brain can selectively reactivate <em>individual</em> past events, which is a qualitatively different kind of
+          computation.
+        </li>
+      </ul>
+
+      <h3>External Relevance</h3>
+      <p>
+        At the most basic level, this study addresses how we make sense of what is happening to us. Every time you watch a movie, read
+        a book, or follow a conversation, your brain is doing the work described here; pulling up relevant memories at transition
+        points to help you understand the narrative. This is something we do effortlessly and constantly, and now we have a candidate
+        neural mechanism for it.
+      </p>
+      <p>
+        For researchers, this opens up questions about what happens when this mechanism breaks down. Conditions that involve fragmented
+        narrative understanding, such as Alzheimer's disease or certain forms of amnesia, could involve disruptions to boundary-triggered
+        reactivation (Buckner et al., 2008). Understanding the mechanism in healthy brains is a first step toward understanding
+        what goes wrong in clinical populations.
+      </p>
+    </section>
+
+    <section id="critique" class="section">
+      <h2>Critique</h2>
+
+      <h3>Strengths</h3>
+      <ul>
+        <li>
+          Naturalistic stimuli let the authors study reactivation of unique, one-time events rather than overtrained repeated trials.
+          RSA was the right analytic tool for this, as it can compare multivoxel patterns across specific timepoints without requiring
+          repeated conditions, making it well-suited to continuous, non-repeating narratives where those traditional contrast-based fMRI
+          approaches would not apply.
+        </li>
+        <li>
+          Replication across two independent datasets with different modalities (movie vs story), different narrative structures (single
+          plot vs. alternating storylines), and different participant groups. This cross-dataset validation, combined with the mega-analysis,
+          is rigorous and substantially strengthens the generalizability of the findings.
+        </li>
+        <li>
+          The past-minus-future reactivation index is a methodologically viable control. It cancels out symmetric scene-to-scene similarity,
+          isolating genuine reactivation from pattern overlap between neighbouring scenes. The boundary specificity analysis (comparing
+          boundaries to adjacent control timepoints) and the flushing control (excluding post-boundary events) further rule out confounders.
+        </li>
+      </ul>
+
+      <h3>Limitations</h3>
+      <ul>
+        <li>
+          This study is correlational only. Reactivation occurs at boundaries, but the data cannot establish that it is causally required
+          for comprehension.
+        </li>
+        <li>
+          BOLDs ~5-6 second lag hurts temporal precision. The authors compensate with a 4-TR shift, which is standard practice, but it
+          still means that the exact moment of reactivation relative to the boundary is blurry. The authors acknowledge this directly, and
+          it is why they prefer/use the term "reactivation" over "replay."
+        </li>
+        <li>
+          The bag-of-words algorithm used to measure semantic relatedness is dead simple, it captures word overlap but not any deeper
+          semantic or narrative meaning. A more sophisticated approach (such as sentence embeddings) might reveal stronger/different
+          patterns of context selectivity.
+        </li>
+        <li>
+          Context-selective reactivation replicated across datasets only in the precuneus/retrosplenial cortex. The hippocampus and angular
+          gyrus showed reactivation but not clear content selectivity, limiting how broadly the "selective" claim can be applied.
+        </li>
+        <li>
+          There is no behavioural measure. The study never tests whether stronger reactivation leads to better memory or understanding of
+          the narrative. This is the most significant gap; without it, the functional significance of reactivation remains an inference.
+        </li>
+        <li>
+          Sample sizes (17 and 25) are modest. While the cross-dataset replication compensates for this to some extent, larger samples
+          would provide more statistical power, particularly for the context-selectivity analysis (which showed weaker effects in the 21st
+          Year dataset).
+        </li>
+        <li>
+          No predictive coding found. The authors expected to find boundary patterns resembling future events, but did not...
+        </li>
+      </ul>
+
+      <h3>Do Conclusions Follow from Findings?</h3>
+      <p>
+        The three core findings of reactivation at boundaries, boundary specificity, and context selectivity in the precuneus, are each
+        supported by appropriate analyses, controls, and cross-dataset replication. <strong>The data does support these claims</strong>.
+        The broader conclusion, that reactivation is a "constructive mechanism" for building narrative understanding in real time, is a
+        reasonable interpretation but goes beyond what the data strictly demonstrate. Without a behavioural measure linking reactivation
+        to comprehension or memory, the claim that this process <em>underlies understanding</em> (rather than merely accompanying it) remains
+        an inference. The authors are rather transparent about this; they frame it as a proposal, not a proven fact.
+      </p>
+
+      <h3>Future Directions</h3>
+      <ul>
+        <li>
+          Link reactivation to behaviour; does stronger boundary reactivation predict better recall or comprehension?
+        </li>
+        <li>
+          More precise timing; researches could combine fMRI with EEG/MEG for granular reactivation timing.
+        </li>
+        <li>
+          Clinical populations; test whether disrupted boundary reactivation relates to fragmented memory in Alzheimers or PTSD.
+        </li>
+        <li>
+          It could also be interesting to explore narratives with unpredictable structure to probe the interaction between
+          prediction and reactivation.
+        </li>
+      </ul>
+
+      <h3>Take-Home Conclusion</h3>
+      <p>
+        When a scene shifts, your brain doesn't immediately move on. It replays relevant earlier moments to help you make sense of what is
+        happening now. This study provides initial evidence that this happens selectively, in real time, at event boundaries, in the
+        hippocampus and default mode network.
+      </p>
+    </section>
+
+    <section id="ai-use" class="section">
+      <h2>Use of AI</h2>
+      <ul>
+        <li>
+          AI tools were used to assist in writing the codebase's frontend infrastructure and reformatting text from the PDF into embed-able
+          HTML; they were used for text processing not generation.
+        </li>
+        <li>
+          Used AI to generate an initial summary of the original paper, requested it to focus on the study design/setup since I was a bit
+          confused reading the original paper (chat available at https://chatgpt.com/share/69d5d9c9-160c-83e8-b074-e7321cc41d5c).
+        </li>
+        <li>
+          Used AI to assist in frontend (CSS/TypeScript) setup, backend was ripped from my portfolio with minimal changes.
+        </li>
+        <li>
+          Used AI to transcribe references from the original paper into my presentation.html references section (see references section
+          below!).
+        </li>
+      </ul>
+    </section>
+
+    <!-- i give up formatting this, it is what it is... -->
+    <section id="references" class="section">
+      <h2>References</h2>
+      <ol class="references">
+        <li>Ben-Yakov, A., Eshel, N., &amp; Dudai, Y. (2013). Hippocampal immediate poststimulus activity in the encoding of consecutive naturalistic episodes. <em>Journal of Experimental Psychology: General</em>, <em>142</em>(4), 1255.</li>
+        <li>Ben-Yakov, A., &amp; Henson, R. N. (2018). The hippocampal film editor: Sensitivity and specificity to event boundaries in continuous experience. <em>Journal of Neuroscience</em>, <em>38</em>(47), 10057-10068.</li>
+        <li>Buckner, R. L., Andrews-Hanna, J. R., &amp; Schacter, D. L. (2008). The brain's default network: Anatomy, function, and relevance to disease. <em>Annals of the New York Academy of Sciences</em>, <em>1124</em>(1), 1-38.</li>
+        <li>Chang, C. H., Lazaridi, C., Yeshurun, Y., Norman, K. A., &amp; Hasson, U. (2021). Relating the past with the present: Information integration and segregation during ongoing narrative processing. <em>Journal of Cognitive Neuroscience</em>, <em>33</em>(6), 1106-1128.</li>
+        <li>Chen, J., et al. (2017). Shared memories reveal shared structure in neural activity across individuals. <em>Nature Neuroscience</em>, <em>20</em>(1), 115-125.</li>
+        <li>Eichenbaum, H. (2000). A cortical-hippocampal system for declarative memory. <em>Nature Reviews Neuroscience</em>, <em>1</em>(1), 41-50.</li>
+        <li>Findlay, G., Tononi, G., &amp; Cirelli, C. (2020). The evolving view of replay and its functions in wake and sleep. <em>Sleep Advances</em>, <em>1</em>, zpab002.</li>
+        <li>Foster, D. J. (2017). Replay comes of age. <em>Annual Review of Neuroscience</em>, <em>40</em>, 581-602.</li>
+        <li>Gupta, A. S., van der Meer, M. A., Touretzky, D. S., &amp; Redish, A. D. (2010). Hippocampal replay is not a simple function of experience. <em>Neuron</em>, <em>65</em>(5), 695-705.</li>
+        <li>Karlsson, M. P., &amp; Frank, L. M. (2009). Awake replay of remote experiences in the hippocampus. <em>Nature Neuroscience</em>, <em>12</em>(7), 913-918.</li>
+        <li>Kriegeskorte, N., Mur, M., &amp; Bandettini, P. (2008). Representational similarity analysis - connecting the branches of systems neuroscience. <em>Frontiers in Systems Neuroscience</em>, <em>2</em>, 4.</li>
+        <li>Pfeiffer, B. E. (2020). The content of hippocampal 'replay'. <em>Hippocampus</em>, <em>30</em>(1), 6-18.</li>
+        <li>Pfeiffer, B. E., &amp; Foster, D. J. (2013). Hippocampal place-cell sequences depict future paths to remembered goals. <em>Nature</em>, <em>497</em>(7447), 74-79.</li>
+        <li>Radvansky, G. A., &amp; Zacks, J. M. (2011). Event perception. <em>Wiley Interdisciplinary Reviews: Cognitive Science</em>, <em>2</em>(6), 608-620.</li>
+        <li>Shohamy, D., &amp; Wagner, A. D. (2008). Integrating memories in the human brain: Hippocampal-midbrain encoding of overlapping events. <em>Neuron</em>, <em>60</em>(2), 378-389.</li>
+        <li>Silva, M., Baldassano, C., &amp; Fuentemilla, L. (2019). Rapid memory reactivation at movie event boundaries promotes episodic encoding. <em>Journal of Neuroscience</em>, <em>39</em>(43), 8538-8548.</li>
+        <li>Sols, I., DuBrow, S., Davachi, L., &amp; Fuentemilla, L. (2017). Event boundaries trigger rapid memory reinstatement of the prior events to promote their representation in long-term memory. <em>Current Biology</em>, <em>27</em>(22), 3499-3504.</li>
+        <li>Tambini, A., &amp; Davachi, L. (2019). Awake reactivation of prior experiences consolidates memories and biases cognition. <em>Trends in Cognitive Sciences</em>, <em>23</em>(10), 876-890.</li>
+        <li>Yeshurun, Y., Nguyen, M., &amp; Hasson, U. (2021). The default mode network: Where the idiosyncratic self meets the shared social world. <em>Nature Reviews Neuroscience</em>, <em>22</em>(3), 181-192.</li>
+        <li>Zacks, J. M., Speer, N. K., Swallow, K. M., Braver, T. S., &amp; Reynolds, J. R. (2007). Event perception: A mind-brain perspective. <em>Psychological Bulletin</em>, <em>133</em>(2), 273.</li>
+        <li>Zadbood, A., Chen, J., Leong, Y. C., Norman, K. A., &amp; Hasson, U. (2017). How we transmit memories to other brains: Constructing shared neural representations via communication. <em>Cerebral Cortex</em>, <em>27</em>(10), 4988-5000.</li>
+        <li>Zheng, J., et al. (2022). Neurons detect cognitive boundaries to structure episodic memories in humans. <em>Nature Neuroscience</em>, <em>25</em>(3), 358-368.</li>
+      </ol>
+    </section>
+  </div>
+{% endblock content %}
+
+{% block footer %}{% endblock footer %}
+
+{% block extra_js %}
+  <button id="theme-toggle" class="theme-toggle" aria-label="Toggle theme"></button>
+  <script type="module" src="/static/js/theme.js"></script>
+{% endblock extra_js %}

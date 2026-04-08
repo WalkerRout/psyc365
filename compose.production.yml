@@ -1,0 +1,12 @@
+services:
+  server-production:
+    container_name: psyc365-server
+    build:
+      context: server
+      dockerfile: Dockerfile
+      target: production
+    restart: unless-stopped
+    profiles:
+      - production
+
+# ClusterIP is default network and is already internal to the cluster

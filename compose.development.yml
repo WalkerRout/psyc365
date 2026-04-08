@@ -1,0 +1,38 @@
+services:
+  server-development:
+    container_name: psyc365-server
+    build:
+      context: server
+      dockerfile: Dockerfile
+      target: development
+    restart: unless-stopped
+    volumes:
+      - ./server/backend:/app/backend
+      - ./server/frontend:/app/frontend
+      - ./server/ui-schema:/app/ui-schema
+    networks:
+      - internal
+    profiles:
+      - development
+
+  reverse-proxy-development:
+    container_name: psyc365-reverse-proxy
+    build:
+      context: nginx
+      dockerfile: Dockerfile
+    depends_on:
+      - server-development
+    restart: unless-stopped
+    networks:
+      - internal
+      - external
+    ports:
+      - "80:80"
+    profiles:
+      - development
+
+networks:
+  internal:
+    driver: bridge
+  external:
+    driver: bridge
