@@ -22,6 +22,8 @@ fn main() -> io::Result<()> {
   // should be called after compiling the ts
   compress_static_files()?;
 
+  println!("cargo:warning=finished intermediate compilation setup successfully...");
+
   Ok(())
 }
 

@@ -25,8 +25,9 @@ async fn show_visible_files() {
 
 #[tokio::main(flavor = "current_thread")]
 async fn main() {
+  use tracing_subscriber::filter::LevelFilter;
   tracing_subscriber::fmt()
-    .with_max_level(tracing_subscriber::filter::LevelFilter::INFO)
+    .with_max_level(LevelFilter::INFO)
     .with_target(false)
     .with_thread_ids(true)
     .with_ansi(false)
